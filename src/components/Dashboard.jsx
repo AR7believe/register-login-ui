@@ -1,9 +1,7 @@
-
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
       
-      {/* Top Navbar */}
       <nav className="navbar">
         <div className="nav-right">
           <span>Welcome back, Alex!</span>
@@ -11,7 +9,6 @@ const Dashboard = () => {
         </div>
       </nav>
 
-      {/* Welcome Section */}
       <section className="welcome-section">
         <h1>Welcome, Alex!</h1>
         <p>
@@ -20,7 +17,6 @@ const Dashboard = () => {
         </p>
       </section>
 
-      {/* Cards Section */}
       <section className="cards-section">
         <div className="card">
           <h3>My Profile</h3>
@@ -43,13 +39,12 @@ const Dashboard = () => {
         </div>
       </section>
 
-      {/* Feature Banner */}
       <section className="feature-banner">
         <h2>Try the new Data Explorer</h2>
         <p>
           Visualize your data flow with our new interactive engine.
         </p>
-        <button className="primary-btn">Get Started</button>
+        <button className="get-started-btn">Get Started</button>
       </section>
 
     </div>
