@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../api/api";
 
 const Login = () => {
@@ -9,6 +9,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   const validate = () => {
     const e = {};
@@ -25,11 +27,14 @@ const Login = () => {
     if (!validate()) return;
 
     try {
-      const res = await api.post("/auth/login", {
+      await api.post("/auth/login", {
         email,
         password,
       });
-      alert(res.data.message);
+
+      setTimeout(() => {
+      navigate("/dashboard");
+    }, 800);
     } catch (err) {
       setErrors({
         api: err.response?.data?.message || "Invalid credentials",
