@@ -227,7 +227,7 @@ input.error {
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-90%);
   cursor: pointer;
   font-size: 16px;
   color: #9ca3af;
@@ -269,7 +269,7 @@ input.error {
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-90%);
   cursor: pointer;
   color: #9ca3af;
   font-size: 16px;
@@ -292,6 +292,111 @@ input.error {
 .hint-text {
   font-size: 12px;
   color: #6b7280;
+}
+
+/* POPUP OVERLAY */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* POPUP CARD */
+.popup-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px;
+  width: 420px;
+  text-align: center;
+  position: relative;
+  animation: popupScale 0.35s ease;
+}
+
+.popup-card h2 {
+  color: #22c55e;
+  margin-bottom: 12px;
+}
+
+.popup-card p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.redirect-text {
+  margin-bottom: 20px;
+}
+
+/* CLOSE ICON */
+.popup-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.popup-close:hover {
+  color: #111827;
+}
+
+/* RIGHT CARD ANIMATION */
+.auth-right {
+  animation: cardFadeSlide 0.6s ease forwards;
+}
+
+@keyframes cardFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* LEFT PANEL TEXT ANIMATION */
+.left-animate {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: leftFadeUp 0.6s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.45s;
+}
+
+.delay-3 {
+  animation-delay: 0.60s;
+}
+
+@keyframes leftFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ANIMATION */
+@keyframes popupScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 1024px) {
